@@ -1,0 +1,31 @@
+[
+    ("What does the alpha parameter control in Matplotlib plots?", 
+     "The `alpha` parameter in Matplotlib controls the transparency (or opacity) of the plot elements. It takes a float value between 0.0 (completely transparent) and 1.0 (completely opaque)."),
+    
+    ("What is the default backend in Matplotlib and how can I check it?", 
+     "The default backend depends on your environment (e.g., 'Agg' for scripts, 'module://ipykernel.pylab.backend_inline' in Jupyter). You can check your current backend by importing Matplotlib and running: `import matplotlib; print(matplotlib.get_backend())`"),
+    
+    ("Give an example of creating a line plot with markers in Matplotlib.", 
+     "You can add markers using the `marker` argument in `plt.plot()`. \n```python\nimport matplotlib.pyplot as plt\n\nx = [1, 2, 3, 4, 5]\ny = [2, 5, 3, 6, 4]\n\nplt.plot(x, y, marker='o', linestyle='-') # 'o' creates circular markers\nplt.show()\n```"),
+    
+    ("Show how to save a figure as a high-resolution PNG.", 
+     "Use the `savefig()` function and specify the `dpi` (dots per inch) argument. A common value for high resolution is 300.\n```python\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 2, 3], [1, 4, 9])\nplt.savefig('my_high_res_plot.png', dpi=300)\n```"),
+    
+    ("How do I customize tick labels rotation in Matplotlib?", 
+     "You can use the `rotation` parameter in `plt.xticks()` or `ax.tick_params()`. \n```python\nimport matplotlib.pyplot as plt\n\nx = ['A', 'B', 'C', 'D']\ny = [1, 4, 2, 3]\n\nplt.plot(x, y)\nplt.xticks(rotation=45) # Rotates x-axis labels 45 degrees\nplt.show()\n```"),
+    
+    ("Explain the difference between plt.plot() and ax.plot().", 
+     "`plt.plot()` is part of the state-based `pyplot` interface. It implicitly acts on the 'current' active Axes. `ax.plot()` is the object-oriented (OO) method, which is called explicitly on a specific `Axes` object (`ax`). The OO approach is preferred for complex plots as it gives you explicit control over which figure and subplot you are modifying."),
+    
+    ("Which function should I use to share axes between subplots?", 
+     "You should use `plt.subplots()` and set its `sharex` or `sharey` arguments to `True`. \n```python\n# Creates a 2x1 grid where both subplots share the same x-axis\nfig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)\n```"),
+    
+    ("How is imshow() related to pcolormesh() or contourf()?", 
+     "All three are used to visualize 2D array data. \n* **`imshow()`** displays the data as a rasterized image, where each cell in the array is a pixel.\n* **`pcolormesh()`** creates a grid of colored quadrilaterals and is more flexible, as it can handle non-regular grids.\n* **`contourf()`** interpolates the data to draw filled, smooth regions representing levels of equal value."),
+    
+    ("What are the available interpolation methods for imshow()?", 
+     "The `imshow()` function's `interpolation` parameter accepts many values. The most common are `'none'` or `'nearest'` (which shows pixelated blocks) and `'bilinear'` or `'bicubic'` (which create a smoother, anti-aliased appearance). Other methods include 'gaussian', 'lanczos', and 'spline16'."),
+    
+    ("Create a scatter plot with color mapped to a value using a colormap.", 
+     "Pass the array of values to the `c` argument and specify a colormap name (like 'viridis') to the `cmap` argument. Add `plt.colorbar()` to show the mapping.\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.random.rand(50)\ny = np.random.rand(50)\ncolors = np.random.rand(50) # Values to map to color\n\nplt.scatter(x, y, c=colors, cmap='viridis')\nplt.colorbar(label='Color Value')\nplt.show()\n```"),
+]

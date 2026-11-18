@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: ankane/pgvector
+    env_file: .env
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  backend:
+    build: ./backend
+    env_file: .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
+  crawler:
+    build: ./crawler
+    env_file: .env
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./frontend
+    env_file: .env
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:

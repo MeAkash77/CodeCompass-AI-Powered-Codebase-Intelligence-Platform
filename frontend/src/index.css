@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+
+:root {
+  font-family: "Alan Sans", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background: linear-gradient(
+    -160deg,
+    rgb(35, 8, 61) 2%,
+    var(--color-background) 25%
+  );
+  background-attachment: fixed;
+  color: var(--color-text);
+
+  overflow-y: auto; 
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-secondary);
+  text-decoration: underline wavy;
+}
+a:hover {
+  color: var(--color-secondarydark);
+}
+
+p > code {
+  background-color: var(--color-backgroundsecondary);
+  border-radius: 6px;
+  padding: 0.3rem;
+}
+
+pre {
+  color: #eecaff;
+  font-size: 0.9rem;
+  background-color: var(--color-backgroundneutral);
+  
+  border: 0.1rem solid var(--color-primary);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}

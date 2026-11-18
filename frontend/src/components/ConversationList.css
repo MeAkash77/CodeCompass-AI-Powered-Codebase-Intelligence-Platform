@@ -1,0 +1,55 @@
+.conversation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message-bubble {
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  word-break: break-word;
+}
+
+.message-user {
+  align-self: flex-end;
+  max-width: 60%;
+  background-color: var(--color-backgroundsecondary);
+  margin: 0.5rem 0;
+}
+
+.message-assistant {
+  align-self: stretch;
+  max-width: 100%;
+  margin: 0.5rem 0;
+}
+
+.no-data {
+  background: linear-gradient(120deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  font-size: 2rem;
+  text-align: center;
+}
+
+.citations {
+  padding: 0.5rem 0.8rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+  border: 0.1rem solid var(--color-primary);
+  font-size: 15px;
+}
+
+.citation {
+  margin: 0.5rem 0;
+}
+
+.citations-title {
+  font-size: large;
+  margin: 0 0 0.5rem 0;
+}
+
+.citation-url {
+  font-weight: 200;
+  margin: 0;
+}
