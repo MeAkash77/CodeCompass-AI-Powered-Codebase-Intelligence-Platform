@@ -53,7 +53,7 @@ A Retrieval-Augmented-Generation (RAG) system that **scrape, index, and query pr
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/airelcamilo/code-compass.git
+git clone https://github.com/MeAkash77/CodeCompass-AI-Powered-Codebase-Intelligence-Platform.git
 ```
 
 ### 2. Environment configuration
@@ -225,4 +225,4 @@ Evaluation was performed using the **RAGAS** framework to measure the quality of
 ---
 
 ## 🧾 Credits
-Airel Camilo Khairan © 2025
+Akash © 2025
