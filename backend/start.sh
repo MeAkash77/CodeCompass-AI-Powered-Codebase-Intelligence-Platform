@@ -1,14 +1,9 @@
+
 #!/bin/bash
 set -e
 
-echo "Checking for unapplied Alembic migrations..."
+echo "Running database migrations..."
+alembic upgrade head
 
-if alembic history | grep "(head)"; then
-    echo "Alembic migrations already up-to-date."
-else
-    echo "Running Alembic migrations..."
-    alembic upgrade head
-fi
-
-echo "Starting FastAPI server..."
-exec uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+echo "Starting Code Compass API..."
+exec uvicorn app.main:app --host 0.0.0.0 --port "${PORT:-8000}"
